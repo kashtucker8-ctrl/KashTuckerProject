@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Budget Dashboard</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Budget Dashboard</h1>
+            <nav class="nav-links">
+                <a href="/transactions">Transactions →</a>
+                <a href="/summary">Summary →</a>
+                <a href="/pivot">Pivot →</a>
+                <a href="/scenarios">Scenarios →</a>
+                <a href="/memo">Memo →</a>
+            </nav>
+        </header>
+
+        <section class="filters">
+            <div class="filter-group">
+                <label for="monthFilter">Month:</label>
+                <select id="monthFilter">
+                    <option value="all">All Months</option>
+                </select>
+            </div>
+            <div class="filter-group">
+                <label for="categoryFilter">Category:</label>
+                <select id="categoryFilter">
+                    <option value="all">All Categories</option>
+                </select>
+            </div>
+        </section>
+
+        <section class="kpi-cards">
+            <div class="kpi-card income">
+                <h3>Income</h3>
+                <p id="kpiIncome">$0</p>
+            </div>
+            <div class="kpi-card expenses">
+                <h3>Total Spend</h3>
+                <p id="kpiExpenses">$0</p>
+            </div>
+            <div class="kpi-card net">
+                <h3>Net</h3>
+                <p id="kpiNet">$0</p>
+            </div>
+            <div class="kpi-card savings">
+                <h3>Savings %</h3>
+                <p id="kpiSavings">0%</p>
+            </div>
+        </section>
+
+        <section class="charts">
+            <div class="chart-container">
+                <h3>Expenses by Category</h3>
+                <canvas id="pieChart"></canvas>
+            </div>
+            <div class="chart-container">
+                <h3>Monthly Expense Breakdown (Pivot Chart)</h3>
+                <canvas id="pivotChart"></canvas>
+            </div>
+        </section>
+
+    </div>
+
+    <script src="/static/js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scenarios - Budget Dashboard</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Scenarios & Goal Seek</h1>
+            <nav class="nav-links">
+                <a href="/">← Back to Dashboard</a>
+            </nav>
+        </header>
+
+        <section class="scenarios-content">
+            <h2>Scenario Comparison: Current vs Frugal</h2>
+            <p class="scenario-desc">Frugal scenario reduces Want spending by 50% to test higher savings targets.</p>
+            
+            <table class="scenarios-table">
+                <thead>
+                    <tr>
+                        <th>Metric</th>
+                        <th>Current</th>
+                        <th>Frugal</th>
+                        <th>Difference</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Income</td>
+                        <td id="currentIncome">$0</td>
+                        <td id="frugalIncome">$0</td>
+                        <td id="diffIncome">$0</td>
+                    </tr>
+                    <tr>
+                        <td>Needs</td>
+                        <td id="currentNeeds">$0</td>
+                        <td id="frugalNeeds">$0</td>
+                        <td id="diffNeeds">$0</td>
+                    </tr>
+                    <tr>
+                        <td>Wants</td>
+                        <td id="currentWants">$0</td>
+                        <td id="frugalWants">$0</td>
+                        <td id="diffWants" class="highlight-red">$0</td>
+                    </tr>
+                    <tr class="divider">
+                        <td colspan="4"></td>
+                    </tr>
+                    <tr class="highlight">
+                        <td>Savings</td>
+                        <td id="currentSavings">$0</td>
+                        <td id="frugalSavings">$0</td>
+                        <td id="diffSavings" class="highlight-green">$0</td>
+                    </tr>
+                    <tr class="highlight">
+                        <td>Savings %</td>
+                        <td id="currentSavingsPct">0%</td>
+                        <td id="frugalSavingsPct">0%</td>
+                        <td id="diffSavingsPct" class="highlight-green">0%</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="scenario-notes">
+                <h3>Changes Made</h3>
+                <ul>
+                    <li><strong>Wants Reduced:</strong> Entertainment and Shopping spending cut by 50%</li>
+                    <li><strong>Result:</strong> Savings increase by capturing freed-up spending</li>
+                    <li><strong>Goal Met:</strong> Frugal scenario demonstrates achievable savings targets</li>
+                </ul>
+            </div>
+
+            <div class="custom-scenario-section">
+                <h2>Custom Savings Goal</h2>
+                <p class="scenario-desc">Enter your target savings percentage to see how much each category would need to adjust.</p>
+                
+                <div class="goal-input-group">
+                    <input type="number" id="goalInput" min="0" max="100" value="25" step="0.5">
+                    <span>%</span>
+                    <button id="calculateBtn" onclick="calculateCustomScenario()">Calculate</button>
+                </div>
+
+                <table class="scenarios-table" id="customTable" style="display: none; margin-top: 20px;">
+                    <thead>
+                        <tr>
+                            <th>Category</th>
+                            <th>Current Spending</th>
+                            <th>Adjusted Spending</th>
+                            <th>Change</th>
+                        </tr>
+                    </thead>
+                    <tbody id="customTableBody"></tbody>
+                </table>
+
+                <div id="customSummary" style="display: none; margin-top: 20px;">
+                    <p><strong>Goal Savings %:</strong> <span id="goalValue">25%</span></p>
+                    <p><strong>Target Total Expenses:</strong> <span id="targetExpenses">$0</span></p>
+                    <p><strong>Target Savings Amount:</strong> <span id="targetSavings">$0</span></p>
+                    <p><strong>Required Reduction:</strong> <span id="reductionFactor">0%</span></p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script src="/static/js/scenarios.js"></script>
+</body>
+</html>

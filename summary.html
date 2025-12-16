@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Summary - Budget Dashboard</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Summary</h1>
+            <nav class="nav-links">
+                <a href="/">← Back to Dashboard</a>
+            </nav>
+        </header>
+
+        <section class="summary-content">
+            <h2>Budget Summary (Calculated Totals)</h2>
+            
+            <table class="summary-table">
+                <thead>
+                    <tr>
+                        <th>Metric</th>
+                        <th>Amount</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Total Income</strong></td>
+                        <td id="summaryIncome">$0</td>
+                    </tr>
+                    <tr class="divider">
+                        <td colspan="2"></td>
+                    </tr>
+                    <tr>
+                        <td>Needs (Housing, Food, Utilities, etc)</td>
+                        <td id="summaryNeeds">$0</td>
+                    </tr>
+                    <tr>
+                        <td>Wants (Entertainment, Shopping)</td>
+                        <td id="summaryWants">$0</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Total Expenses</strong></td>
+                        <td id="summaryExpenses">$0</td>
+                    </tr>
+                    <tr class="divider">
+                        <td colspan="2"></td>
+                    </tr>
+                    <tr class="highlight">
+                        <td><strong>Net (Income - Expenses)</strong></td>
+                        <td id="summaryNet">$0</td>
+                    </tr>
+                    <tr class="highlight">
+                        <td><strong>Savings % (Net / Income)</strong></td>
+                        <td id="summarySavingsPct">0%</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="summary-notes">
+                <h3>Formula Reference</h3>
+                <p>Net = Total Income - Total Expenses</p>
+                <p>Savings % = (Net / Total Income) × 100</p>
+            </div>
+        </section>
+    </div>
+
+    <script src="/static/js/summary.js"></script>
+</body>
+</html>

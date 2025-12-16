@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pivot Analysis - Budget Dashboard</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Pivot Analysis</h1>
+            <nav class="nav-links">
+                <a href="/">← Back to Dashboard</a>
+            </nav>
+        </header>
+
+        <section class="pivot-content">
+            <div class="pivot-section">
+                <h2>Pivot Table A: Category x Sum of Amount</h2>
+                <table class="pivot-table">
+                    <thead>
+                        <tr>
+                            <th>Category</th>
+                            <th>Total Amount</th>
+                        </tr>
+                    </thead>
+                    <tbody id="pivotTableA"></tbody>
+                </table>
+            </div>
+
+            <div class="pivot-section">
+                <h2>Pivot Table B: Month x Sum of Amount</h2>
+                <table class="pivot-table">
+                    <thead>
+                        <tr>
+                            <th>Month</th>
+                            <th>Total Amount</th>
+                        </tr>
+                    </thead>
+                    <tbody id="pivotTableB"></tbody>
+                </table>
+            </div>
+
+            <div class="pivot-section">
+                <h3>PivotChart: Expenses by Month</h3>
+                <canvas id="pivotChart"></canvas>
+            </div>
+        </section>
+    </div>
+
+    <script src="/static/js/pivot.js"></script>
+</body>
+</html>
